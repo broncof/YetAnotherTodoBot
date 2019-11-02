@@ -51,7 +51,7 @@ describe('TodoService', () => {
       await todoService.insert({ text: 'todo3', userId: 'other' });
 
       const todos = await todoService.list({ userId: 'wovalle' });
-      assert.equal(todos.length, 2);
+      assert.equal(todos.length, 123);
     });
 
     it('Should filter by status');
@@ -67,7 +67,7 @@ describe('TodoService', () => {
 
       const finished = todos.find(t => t.text === 'todo2');
 
-      assert.equal(finished.status, 'Done');
+      assert.equal(finished.status, 'fail');
       assert.equal(finished.updatedAt, currentDate);
       assert.equal(finished.finishedAt, currentDate);
     });
